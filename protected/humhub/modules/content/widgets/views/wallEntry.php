@@ -1,5 +1,6 @@
 <?php
 
+use Codeception\Command\Console;
 use humhub\libs\Html;
 use humhub\modules\content\widgets\WallEntryAddons;
 use humhub\modules\content\widgets\WallEntryControls;
@@ -9,6 +10,7 @@ use humhub\modules\space\widgets\Image as SpaceImage;
 use humhub\modules\user\widgets\Image as UserImage;
 use humhub\widgets\TimeAgo;
 use yii\helpers\Url;
+use Imgix\UrlBuilder;
 
 /* @var $object \humhub\modules\content\models\Content */
 /* @var $container \humhub\modules\content\components\ContentContainerActiveRecord */
@@ -18,89 +20,65 @@ use yii\helpers\Url;
 /* @var $showContentContainer \humhub\modules\user\models\User */
 ?>
 
-
 <div class="panel panel-default wall_<?= $object->getUniqueId(); ?>">
-    <div class="panel-body">
+<div class="panel-body">
 
-        <div class="media">
-            <!-- since v1.2 -->
-            <div class="stream-entry-loader"></div>
+<div class="media">
+<!-- since v1.2 -->
+<div class="stream-entry-loader"></div>
 
-            <!-- start: show wall entry options -->
-            <?php if ($renderControls) : ?>
-                <ul class="nav nav-pills preferences">
-                    <li class="dropdown ">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#"
-                           aria-label="<?= Yii::t('base', 'Toggle stream entry menu'); ?>" aria-haspopup="true">
-                            <i class="fa fa-angle-down"></i>
-                        </a>
+<!-- start: show wall entry options -->
+<?php if ($renderControls) : ?>
+<ul class="nav nav-pills preferences">
+<li class="dropdown ">
+<a class="dropdown-toggle" data-toggle="dropdown" href="#"
+aria-label="<?= Yii::t('base', 'Toggle stream entry menu'); ?>" aria-haspopup="true">
+<i class="fa fa-angle-down"></i>
+</a>
 
-                        <ul class="dropdown-menu pull-right">
-                            <?= WallEntryControls::widget(['object' => $object, 'wallEntryWidget' => $wallEntryWidget]); ?>
-                        </ul>
-                    </li>
-                </ul>
-            <?php endif; ?>
-            <!-- end: show wall entry options -->
+<ul class="dropdown-menu pull-right">
+<?= WallEntryControls::widget(['object' => $object, 'wallEntryWidget' => $wallEntryWidget]); ?>
+</ul>
+</li>
+</ul>
+<?php endif; ?>
+<!-- end: show wall entry options -->
 
-            <?=
-            UserImage::widget([
-                'user' => $user,
-                'width' => 40,
-                'htmlOptions' => ['class' => 'pull-left','data-contentcontainer-id' => $user->contentcontainer_id]
-            ]);
-            ?>
 
-            <?php if ($showContentContainer && $container instanceof Space): ?>
-                <?=
-                SpaceImage::widget([
-                    'space' => $container,
-                    'width' => 20,
-                    'htmlOptions' => ['class' => 'img-space'],
-                    'link' => 'true',
-                    'linkOptions' => ['class' => 'pull-left', 'data-contentcontainer-id' => $container->contentcontainer_id],
-                ]);
-                ?>
-            <?php endif; ?>
 
-            <div class="media-body">
-                <div class="media-heading">
-                    <?= Html::containerLink($user); ?>
-                    <?php if ($container && $showContentContainer): ?>
-                        <span class="viaLink">
-                            <i class="fa fa-caret-right" aria-hidden="true"></i>
-                            <?= Html::containerLink($container); ?>
-                        </span>
-                    <?php endif; ?>
 
-                    <div class="pull-right <?= ($renderControls) ? 'labels' : '' ?>">
-                        <?= WallEntryLabels::widget(['object' => $object]); ?>
-                    </div>
-                </div>
-                <div class="media-subheading">
-                    <a href="<?= Url::to(['/content/perma', 'id' => $object->content->id], true) ?>">
-                        <?= TimeAgo::widget(['timestamp' => $createdAt]); ?>
-                    </a>
-                    <?php if ($updatedAt !== null) : ?>
-                        &middot;
-                        <span class="tt"
-                              title="<?= Yii::$app->formatter->asDateTime($updatedAt); ?>"><?= Yii::t('ContentModule.base', 'Updated'); ?></span>
-                    <?php endif; ?>
-                </div>
-            </div>
-            <hr/>
 
-            <div class="content" id="wall_content_<?= $object->getUniqueId(); ?>">
-                <?= $content; ?>
-            </div>
+<div class="media-body">
+<?php
+$nombre_de_lignes = 1;
 
-            <!-- wall-entry-addons class required since 1.2 -->
-            <?php if ($renderAddons) : ?>
-                <div class="stream-entry-addons clearfix">
-                    <?= WallEntryAddons::widget($addonOptions); ?>
-                </div>
-            <?php endif; ?>
 
-        </div>
-    </div>
+  echo '<img src="/themes/Coinsence/img/test/logo.png" style="width:100%" ><br/>';
+  echo '  <img src="/themes/Coinsence/img/test/i.jpeg"> <br/>';
+  echo '  <img src="/themes/Coinsence/img/test/i4.jpeg"><br/>';
+  echo '  <img src="/themes/Coinsence/img/test/i4.jpeg"><br/>';
+  echo ' <img src="/themes/Coinsence/img/test/i1.jpeg"><br/>';
+  echo '<img src="/themes/Coinsence/img/test/i3.jpg"><br/>';
+  echo '  <img src="/themes/Coinsence/img/test/i5.jpg" ><br/>';
+  echo '  <img src="/themes/Coinsence/img/test/i6.jpeg"><br/>';
+  echo ' <img src="/themes/Coinsence/img/test/i7.jpeg"><br/>';
+  echo '  <img src="/themes/Coinsence/img/test/i8.jpeg"><br/>';
+  echo '  <img src="/themes/Coinsence/img/test/i9.jpg" ><br/>';
+  echo '  <img src="/themes/Coinsence/img/test/gif1.gif" ><br/>';
+  echo ' <img src="/themes/Coinsence/img/test/i10.png" >';
+
+    $nombre_de_lignes++; 
+
+?>
+
+</div>
+<hr/>
+
+
+
+<!-- wall-entry-addons class required since 1.2 -->
+
+
+</div>
+</div>
 </div>

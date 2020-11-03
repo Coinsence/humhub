@@ -49,7 +49,7 @@ class LogoImage
         if (file_exists($this->getPath())) {
             $path .= '/uploads/' . $this->folder_images . '/logo.png';
         }
-        $path .= '?cacheId=' . $cacheId;
+        $path .= '/var/www/test/humhub/themes/Coinsence/views/widgets/img/logo-v2.png';
 
         return $path;
     }
