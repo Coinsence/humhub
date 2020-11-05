@@ -6,4 +6,13 @@
  * @see http://docs.humhub.org/dev-environment.html
  */
 return [
+    'params' => [
+        'moduleAutoloadPaths' => ['/home/gdaly/Work/Projects/Freelance/i4c/modules'],
+    ],
+    'components' => [
+        'urlManager' => [
+            'showScriptName' => false,
+            'enablePrettyUrl' => true,
+        ],
+    ]
 ];
