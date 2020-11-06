@@ -26,7 +26,7 @@ $animation = $model->hasErrors() ? 'shake' : 'fadeIn';
 
             <?= $form->field($model, 'tags')->widget(Select2::class, [
                 'model' => $model,
-                'attribute' => 'categories_names',
+                'attribute' => 'tags_names',
                 'data' => ArrayHelper::map(Tag::find()->where(['type' => Tag::TYPE_SPACE])->all(), 'name', 'name'),
                 'options' => [
                     'multiple' => true,

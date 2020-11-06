@@ -199,7 +199,7 @@ class User extends ContentContainerActiveRecord implements IdentityInterface, Se
         $scenarios['login'] = ['username', 'password'];
         $scenarios['editAdmin'] = ['username', 'email', 'status'];
         $scenarios['registration_email'] = ['username', 'email'];
-        $scenarios['registration'] = ['username'];
+        $scenarios['registration'] = ['username', 'tags'];
 
         return $scenarios;
     }
@@ -360,8 +360,8 @@ class User extends ContentContainerActiveRecord implements IdentityInterface, Se
     /**
      * Specifies whether the user should appear in user lists or in the search.
      *
-     * @since 1.2.3
      * @return boolean is visible
+     * @since 1.2.3
      */
     public function isVisible()
     {
@@ -391,8 +391,8 @@ class User extends ContentContainerActiveRecord implements IdentityInterface, Se
 
     /**
      *
-     * @since 1.3
      * @throws Exception
+     * @since 1.3
      */
     public function softDelete()
     {
@@ -435,6 +435,18 @@ class User extends ContentContainerActiveRecord implements IdentityInterface, Se
         ]);
 
         return true;
+    }
+
+    /**
+     * @inerhitdoc
+     */
+    public function beforeValidate()
+    {
+        if (is_array($this->tags)) {
+            $this->tags = implode(',', $this->tags);
+        }
+
+        return parent::beforeValidate();
     }
 
     /**
