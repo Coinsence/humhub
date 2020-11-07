@@ -131,6 +131,7 @@ class User extends ContentContainerActiveRecord implements IdentityInterface, Se
 
         return [
             [['username'], 'required'],
+            [['username'], 'compare', 'compareValue' => 'admin', 'operator' => '!=', 'type' => 'string'],
             [['status', 'created_by', 'updated_by', 'visibility'], 'integer'],
             [['status', 'visibility'], 'integer'],
             [['tags'], 'string'],
