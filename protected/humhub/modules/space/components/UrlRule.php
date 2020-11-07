@@ -42,7 +42,7 @@ class UrlRule extends BaseObject implements UrlRuleInterface
 
             $urlPart = static::getUrlBySpaceGuid($params['cguid']);
             if ($urlPart !== null) {
-                $url = "s/" . urlencode($urlPart) . "/" . $route;
+                $url = urlencode($urlPart) . "/" . $route;
                 unset($params['cguid']);
 
                 if (!empty($params) && ($query = http_build_query($params)) !== '') {
@@ -60,22 +60,21 @@ class UrlRule extends BaseObject implements UrlRuleInterface
     public function parseRequest($manager, $request)
     {
         $pathInfo = $request->getPathInfo();
-        if (substr($pathInfo, 0, 2) == "s/") {
-            $parts = explode('/', $pathInfo, 3);
-            if (isset($parts[1])) {
-                $space = Space::find()->where(['guid' => $parts[1]])->orWhere(['url' => $parts[1]])->one();
+            $parts = explode('/', $pathInfo, 2);
+            if (isset($parts[0])) {
+                $space = Space::find()->where(['guid' => $parts[0]])->orWhere(['url' => $parts[0]])->one();
                 if ($space !== null) {
-                    if (!isset($parts[2]) || $parts[2] == "") {
-                        $parts[2] = $this->defaultRoute;
+                    if (!isset($parts[1]) || $parts[1] == "") {
+                        $parts[1] = $this->defaultRoute;
                     }
 
                     $params = $request->get();
                     $params['cguid'] = $space->guid;
 
-                    return [$parts[2], $params];
+                    return [$parts[1], $params];
                 }
             }
-        }
+
         return false;
     }
 
