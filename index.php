@@ -19,6 +19,7 @@ $config = yii\helpers\ArrayHelper::merge(
     require(__DIR__ . '/protected/humhub/config/web.php'),
     (is_readable(__DIR__ . '/protected/config/dynamic.php')) ? require(__DIR__ . '/protected/config/dynamic.php') : [],
     require(__DIR__ . '/protected/config/common.php'),
+    (is_readable(__DIR__ . '/protected/config/common-local.php')) ? require(__DIR__ . '/protected/config/common-local.php') : [],
     require(__DIR__ . '/protected/config/web.php')
 );
 
