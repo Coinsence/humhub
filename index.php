@@ -20,7 +20,7 @@ $config = yii\helpers\ArrayHelper::merge(
     (is_readable(__DIR__ . '/protected/config/dynamic.php')) ? require(__DIR__ . '/protected/config/dynamic.php') : [],
     require(__DIR__ . '/protected/config/common.php'),
     (is_readable(__DIR__ . '/protected/config/common-local.php')) ? require(__DIR__ . '/protected/config/common-local.php') : [],
-    require(__DIR__ . '/protected/config/web.php')
+    (is_readable(__DIR__ . '/protected/config/web.php')) ? require(__DIR__ . '/protected/config/web.php') : [],
 );
 
 (new humhub\components\Application($config))->run();

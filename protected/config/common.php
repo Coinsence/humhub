@@ -13,5 +13,5 @@ return [
         ],
     ],
     'defaultRoute' => 'xcoin/marketplace-overview',
-    'homeUrl' => '/xcoin/marketplace-overview',
+    'homeUrl' => '/',
 ];
