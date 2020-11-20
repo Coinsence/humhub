@@ -7,11 +7,11 @@ use humhub\modules\user\widgets\StreamViewer;
 use humhub\modules\user\widgets\UserFollower;
 use humhub\modules\user\widgets\UserSpaces;
 use humhub\modules\user\widgets\UserTags;
-use humhub\modules\xcoin\widgets\UserExperience;
+use humhub\modules\xcoin\widgets\UserCoin;
 
 ?>
 
-<?= UserExperience::widget(['user' => $user, 'htmlOptions' => ['style' => 'margin-bottom:100px']]) ?>
+
 <?= Form::widget(['contentContainer' => $user]); ?>
 <?= StreamViewer::widget(['contentContainer' => $user]); ?>
 
@@ -21,10 +21,8 @@ use humhub\modules\xcoin\widgets\UserExperience;
 ProfileSidebar::widget([
     'user' => $user,
     'widgets' => [
-        [UserTags::class, ['user' => $user], ['sortOrder' => 10]],
-        [UserSpaces::class, ['user' => $user], ['sortOrder' => 20]],
-        [FriendsPanel::class, ['user' => $user], ['sortOrder' => 30]],
-        [UserFollower::class, ['user' => $user], ['sortOrder' => 40]],
+        [UserCoin::class, ['user' => $user], ['sortOrder' => 10]],
+        
     ]
 ]);
 ?>
