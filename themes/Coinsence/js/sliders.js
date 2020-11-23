@@ -1,4 +1,6 @@
 $(document).ready(function () {
+  
+
   $(".projectsSlider").slick({
     infinite: false,
     slidesToShow: 1,

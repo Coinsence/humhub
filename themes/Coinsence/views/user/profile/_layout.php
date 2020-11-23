@@ -35,6 +35,7 @@ Select2BootstrapAsset::register($this);
 use humhub\modules\user\widgets\ProfileHeaderCounterSet;
 use humhub\libs\Iso3166Codes;
 use humhub\modules\user\widgets\Image;
+use humhub\modules\xcoin\widgets\UserProfileOfferNeed;
 
 Assets::register($this);
 Select2BootstrapAsset::register($this);
@@ -73,41 +74,9 @@ Select2BootstrapAsset::register($this);
 
 
         <div class="col-lg-9 profileLeftContainer">
-        <?php if($user->profile->skill) :?>
-            <div class="whatIOffer">
-                <?php if (!Yii::$app->user->isGuest) {
-                    echo Html::a(
-                        '<i class="fas fa-pencil-alt editPencil"></i>',
-                        [
-                            '/xcoin/offer/edit','container' => $user
-                            
-                        ],
-                        [
-                            'data-target' => '#globalModal',
-                            'class' => 'edit-btn'
-                          
-                        ]
-                    );
-                }?>
-                <h2>What I offer to the community</h2>
-                <p>
-                    <?= Html::encode($user->profile->skill); ?>
-                </p>
-            </div>
-            <?php endif; ?>
-            <?php if($user->profile->community) :?>
-            <div class="whatINeed">
-                <?php if (!Yii::$app->user->isGuest) {
-                    echo '<i class="fas fa-pencil-alt editPencil"></i>';
-                }?>
-                <h2>What I need from the community</h2>
-                <p>
-                    <?= Html::encode($user->profile->community); ?>
+        <?= UserProfileOfferNeed::widget(['user' => $user]) ?>
 
-                </p>
-            </div>
-            <?php endif; ?>
-        <?= UserExperience::widget(['user' => $user, 'htmlOptions' => ['style' => 'margin-bottom:100px,position: relative']]) ?>
+        <?= UserExperience::widget(['user' => $user, 'htmlOptions' => ['style' => 'margin-bottom:100px']]) ?>
             <?=ProjectPortfolio::widget(['user' => $user]);?>
             <?=MarketPlacePortfolio::widget(['user' => $user]);?>
             <div class="userCoins tabletView">
@@ -191,3 +160,10 @@ echo \humhub\widgets\LoaderWidget::widget();
         </div>
     </div> -->
 </div>
+    <!-- <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+      crossorigin="anonymous"
+    ></script> -->
+    <script type="text/javascript" src="themes/Coinsence/slick/slick.min.js"></script>
+    <!-- <script type="text/javascript" src="themes/Coinsence/js/sliders.js"></script> -->

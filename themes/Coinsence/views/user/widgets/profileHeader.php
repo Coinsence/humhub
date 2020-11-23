@@ -13,6 +13,7 @@ if ($allowModifyProfileBanner || $allowModifyProfileImage) {
     $this->registerJs("var profileImageUploaderUrl='" . Url::to(['/user/image/upload', 'userGuid' => $user->guid, 'type' => ImageController::TYPE_PROFILE_IMAGE]) . "';", \yii\web\View::POS_BEGIN);
     $this->registerJs("var profileHeaderUploaderUrl='" . Url::to(['/user/image/upload', 'userGuid' => $user->guid, 'type' => ImageController::TYPE_PROFILE_BANNER_IMAGE]) . "';", \yii\web\View::POS_BEGIN);
 }
+
 ?>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
 
@@ -21,7 +22,7 @@ if ($allowModifyProfileBanner || $allowModifyProfileImage) {
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
     integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
     crossorigin="anonymous" />
-<link rel="stylesheet" href="themes/Coinsence/css/userInfo.css" />
+<link rel="stylesheet" href="themes/Coinsence/css/user.css" />
 <link rel="stylesheet" type="text/css" href="themes/Coinsence/slick/slick.css" />
 <link rel="stylesheet" type="text/css" href="themes/Coinsence/slick/slick-theme.css" />
 <div class="panel panel-default panel-profile">
@@ -176,28 +177,28 @@ if ($allowModifyProfileBanner || $allowModifyProfileImage) {
                 </div>
                 <div class="socialLinks col-md-4">
                     <?php if(($user->profile->url_facebook)==''):?>
-                    <h1></h1>
+                   
                     <?php else: ?>
                     <a href="<?php echo $user->profile->url_facebook ?>">
                         <i class="fab fa-facebook-square"></i>
                     </a>
                     <?php endif;?>
                     <?php if(($user->profile->url_googleplus)==''):?>
-                    <h1></h1>
+                   
                     <?php else: ?>
                     <a href="<?php echo $user->profile->url_googleplus?>">
                         <i class="fab fa-google-plus-square"></i>
                     </a>
                     <?php endif;?>
                     <?php if(($user->profile->url_twitter)==''):?>
-                    <h1></h1>
+                    
                     <?php else: ?>
                     <a href="<?php echo $user->profile->url_twitter?>">
                         <i class="fab fa-twitter-square"></i>
                     </a>
                     <?php endif;?>
                     <?php if(($user->profile->url_linkedin)==''):?>
-                    <h1></h1>
+                   
                     <?php else: ?>
                     <a href="<?php echo $user->profile->url_linkedin?>">
                         <i class="fab fa-linkedin"></i>
@@ -240,28 +241,28 @@ if ($allowModifyProfileBanner || $allowModifyProfileImage) {
         </div>
         <div class="socialLinks col-md-4 mobileView">
             <?php if(($user->profile->url_facebook)==''):?>
-            <h1></h1>
+           
             <?php else: ?>
             <a href="<?php echo $user->profile->url_facebook ?>">
                 <i class="fab fa-facebook-square"></i>
             </a>
             <?php endif;?>
             <?php if(($user->profile->url_googleplus)==''):?>
-            <h1></h1>
+           
             <?php else: ?>
             <a href="<?php echo $user->profile->url_googleplus?>">
                 <i class="fab fa-google-plus-square"></i>
             </a>
             <?php endif;?>
             <?php if(($user->profile->url_twitter)==''):?>
-            <h1></h1>
+            
             <?php else: ?>
             <a href="<?php echo $user->profile->url_twitter?>">
                 <i class="fab fa-twitter-square"></i>
             </a>
             <?php endif;?>
             <?php if(($user->profile->url_linkedin)==''):?>
-            <h1></h1>
+            
             <?php else: ?>
             <a href="<?php echo $user->profile->url_linkedin?>">
                 <i class="fab fa-linkedin"></i>

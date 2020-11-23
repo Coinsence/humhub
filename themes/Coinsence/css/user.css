@@ -257,11 +257,21 @@ body {
     background: white;
 }
 
-.userInfo .contact button.connect {
+.userInfo .contact .connect,.userInfo .contact .disconnect  {
+
     background: #3CBEEF;
     border: 1px solid #3CBEEF;
-    color: white;
+    box-sizing: border-box;
+    border-radius: 26px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+    text-align: center;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
 }
+
 
 /* mobile items */
 
@@ -1169,7 +1179,14 @@ margin-bottom: 20px;
     line-height: 25px;
     color: #000000;
 }
-
+.whatWeOffer,.whatWeNeed{
+    position: relative;
+}
+.whatWeOffer .edit-btn i,.whatWeNeed .edit-btn i{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
 /* coins */
 
 .userCoins {
@@ -1480,6 +1497,9 @@ color: #FFFFFF;
     align-items: center;
     justify-content: center;
 }
+.editProfile img{
+    margin-right: 7px;
+}
 .contact .editProfile::before{
     margin-right: 10px;
 }
@@ -1523,6 +1543,7 @@ color: #FFFFFF;
     position: absolute;
     right: 10px;
     top: 10px;
+    position:inherit;
 }
 .experience ul{
     position: relative;
@@ -1548,6 +1569,7 @@ border-radius: 50% !important;
 display: flex !important;
 align-items: center !important;
 justify-content: center !important;
+border: 1px solid #3cbeef !important;
 }
 .editExperience .pencilEdit{
     margin-right: 7px;
