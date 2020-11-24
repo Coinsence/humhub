@@ -10,6 +10,9 @@ return [
         'urlManager' => [
             'showScriptName' => false,
             'enablePrettyUrl' => true,
+            'rules' => [
+                'marketplace' => 'xcoin/marketplace-overview',
+            ],
         ],
     ],
     'defaultRoute' => 'xcoin/marketplace-overview',
