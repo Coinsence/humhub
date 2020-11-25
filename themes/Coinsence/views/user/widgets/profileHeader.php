@@ -15,16 +15,8 @@ if ($allowModifyProfileBanner || $allowModifyProfileImage) {
 }
 
 ?>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
-    integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
-    crossorigin="anonymous" />
-<link rel="stylesheet" href="themes/Coinsence/css/user.css" />
-<link rel="stylesheet" type="text/css" href="themes/Coinsence/slick/slick.css" />
-<link rel="stylesheet" type="text/css" href="themes/Coinsence/slick/slick-theme.css" />
+
 <div class="panel panel-default panel-profile">
 
     <div class="userInfo">
@@ -43,7 +35,7 @@ if ($allowModifyProfileBanner || $allowModifyProfileImage) {
                 style="position: absolute; top: 0; left: 0; opacity: 0; width: 100%; height: 100%;">
                 <input type="file" name="images[]" aria-hidden="true">
                 <div>
-                    <i class="fas fa-camera"></i>
+                    <i class="fa fa-camera"></i>
                     <h2>Add a cover image</h2>
                     <p>Optimal dimensions: 1220 x 226 </p>
                 </div>
@@ -76,7 +68,7 @@ if ($allowModifyProfileBanner || $allowModifyProfileImage) {
             <div class="image-upload-buttons" id="banner-image-upload-buttons">
                 <a href="#" onclick="javascript:$('#bannerfileupload input').click();" class="btn btn-info btn-sm"
                     aria-label="<?= Yii::t('UserModule.base', 'Upload profile banner'); ?>">
-                    <i class="fas fa-cloud-upload-alt"></i>
+                    <i class="fa fa-cloud-upload"></i>
                 </a>
                 <a id="banner-image-upload-edit-button"
                     style="<?= (!$user->getProfileBannerImage()->hasImage()) ? 'display: none;' : '' ?>"
@@ -145,7 +137,7 @@ if ($allowModifyProfileBanner || $allowModifyProfileImage) {
                         <a href="#" onclick="javascript:$('#profilefileupload input').click();"
                             class="btn btn-info btn-sm"
                             aria-label="<?= Yii::t('UserModule.base', 'Upload profile image'); ?>">
-                            <i class="fas fa-cloud-upload-alt"></i>
+                            <i class="fa fa-cloud-upload"></i>
 
                         </a>
                         <a id="profile-image-upload-edit-button" style="<?php
@@ -180,28 +172,28 @@ if ($allowModifyProfileBanner || $allowModifyProfileImage) {
                    
                     <?php else: ?>
                     <a href="<?php echo $user->profile->url_facebook ?>">
-                        <i class="fab fa-facebook-square"></i>
+                        <i class="fa fa-facebook-square"></i>
                     </a>
                     <?php endif;?>
                     <?php if(($user->profile->url_googleplus)==''):?>
                    
                     <?php else: ?>
                     <a href="<?php echo $user->profile->url_googleplus?>">
-                        <i class="fab fa-google-plus-square"></i>
+                        <i class="fa fa-google-plus-square"></i>
                     </a>
                     <?php endif;?>
                     <?php if(($user->profile->url_twitter)==''):?>
                     
                     <?php else: ?>
                     <a href="<?php echo $user->profile->url_twitter?>">
-                        <i class="fab fa-twitter-square"></i>
+                        <i class="fa fa-twitter-square"></i>
                     </a>
                     <?php endif;?>
                     <?php if(($user->profile->url_linkedin)==''):?>
                    
                     <?php else: ?>
                     <a href="<?php echo $user->profile->url_linkedin?>">
-                        <i class="fab fa-linkedin"></i>
+                        <i class="fa fa-linkedin"></i>
                     </a>
                     <?php endif;?>
                 </div>
@@ -244,7 +236,7 @@ if ($allowModifyProfileBanner || $allowModifyProfileImage) {
            
             <?php else: ?>
             <a href="<?php echo $user->profile->url_facebook ?>">
-                <i class="fab fa-facebook-square"></i>
+                <i class="fa fa-facebook-square"></i>
             </a>
             <?php endif;?>
             <?php if(($user->profile->url_googleplus)==''):?>
