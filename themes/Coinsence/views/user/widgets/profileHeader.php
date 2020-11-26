@@ -1,7 +1,7 @@
 <?php
 
 use humhub\modules\user\controllers\ImageController;
-use humhub\modules\user\widgets\ProfileHeaderCounterSet;
+use humhub\modules\xcoin\widgets\UserProfileHeaderCounterSet;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use humhub\modules\friendship\widgets\FriendshipButton;
@@ -199,17 +199,18 @@ if ($allowModifyProfileBanner || $allowModifyProfileImage) {
                 </div>
                 <div class="contact mobileView">
 
-                    <?=
-    humhub\modules\user\widgets\ProfileHeaderControls::widget([
-        'user' => $user,
-        'widgets' => [
-            [\humhub\modules\user\widgets\UserFollowButton::class, ['user' => $user], []],
-            [\humhub\modules\friendship\widgets\FriendshipButton::class, ['user' => $user], []],
-            [\humhub\modules\user\widgets\ProfileEditButton::class, ['user' => $user], []],
-        ]
-    ]);
+                <?=
+                    humhub\modules\user\widgets\ProfileHeaderControls::widget([
+                    'user' => $user,
+                    'widgets' => [
+                        [\humhub\modules\user\widgets\UserFollowButton::class, ['user' => $user], []],
+                        [\humhub\modules\friendship\widgets\FriendshipButton::class, ['user' => $user], []],
+                        [\humhub\modules\user\widgets\ProfileEditButton::class, ['user' => $user], []],
+                        ]
+                    ]);
    
-    ?>
+                ?>
+
 
                 </div>
             </div>
@@ -265,19 +266,20 @@ if ($allowModifyProfileBanner || $allowModifyProfileImage) {
             <div class="contact" style="order: 2;">
 
                 <?=
-    humhub\modules\user\widgets\ProfileHeaderControls::widget([
-        'user' => $user,
-        'widgets' => [
-            [\humhub\modules\user\widgets\UserFollowButton::class, ['user' => $user], []],
-            [\humhub\modules\friendship\widgets\FriendshipButton::class, ['user' => $user], []],
-            [\humhub\modules\user\widgets\ProfileEditButton::class, ['user' => $user], []],
-        ]
-    ]);
+                    humhub\modules\user\widgets\ProfileHeaderControls::widget([
+                    'user' => $user,
+                    'widgets' => [
+                        [\humhub\modules\user\widgets\UserFollowButton::class, ['user' => $user], []],
+                        [\humhub\modules\friendship\widgets\FriendshipButton::class, ['user' => $user], []],
+                        [\humhub\modules\user\widgets\ProfileEditButton::class, ['user' => $user], []],
+                        ]
+                    ]);
    
-    ?>
+                ?>
+
 
             </div>
-            <?= ProfileHeaderCounterSet::widget(['user' => $user],[]); ?>
+            <?= UserProfileHeaderCounterSet::widget(['user' => $user],[]); ?>
         </div>
     </div>
 
