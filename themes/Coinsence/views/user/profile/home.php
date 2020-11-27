@@ -7,6 +7,7 @@ use humhub\modules\user\widgets\StreamViewer;
 use humhub\modules\user\widgets\UserFollower;
 use humhub\modules\user\widgets\UserSpaces;
 use humhub\modules\user\widgets\UserTags;
+use humhub\modules\user\widgets\UserWall;
 use humhub\modules\xcoin\widgets\UserCoin;
 
 ?>
@@ -22,7 +23,10 @@ ProfileSidebar::widget([
     'user' => $user,
     'widgets' => [
         [UserCoin::class, ['user' => $user], ['sortOrder' => 10]],
-        
+        [UserSpaces::class, ['user' => $user], ['sortOrder' => 20]],
+        [FriendsPanel::class, ['user' => $user], ['sortOrder' => 30]],
+        [UserFollower::class, ['user' => $user], ['sortOrder' => 40]],
+        [UserWall::class, ['user' => $user], ['sortOrder' => 40]],
     ]
 ]);
 ?>

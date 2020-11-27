@@ -218,7 +218,8 @@ if ($allowModifyProfileBanner || $allowModifyProfileImage) {
         <div class="detailInfo">
             <h2 class="name"><?= Html::encode($user->displayName); ?></h2>
             <h4 class="title"><?= Html::encode($user->profile->title); ?></h4>
-            <p class="address"><?= Html::encode($user->profile->city); ?>, <?= Html::encode($user->profile->country); ?>
+            <p class="address"><?= Html::encode($user->profile->city); ?>
+                <?= Html::encode($user->profile->country); ?>
             </p>
         </div>
         <div class="badges col-md-4 mobileView">
@@ -244,7 +245,7 @@ if ($allowModifyProfileBanner || $allowModifyProfileImage) {
            
             <?php else: ?>
             <a href="<?php echo $user->profile->url_googleplus?>">
-                <i class="fab fa-google-plus-square"></i>
+                <i class="fa fa-google-plus-square"></i>
             </a>
             <?php endif;?>
             <?php if(($user->profile->url_twitter)==''):?>
