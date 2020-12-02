@@ -54,81 +54,16 @@ Select2BootstrapAsset::register($this);
 <div class="container profile-layout-container userProfileContainer">
     <div class="row">
         <div class="col-md-12">
-            <?=ProfileHeader::widget([
+            <?= ProfileHeader::widget([
                 'user' => $user
-                ]);?>
+            ]);?>
         </div>
     </div>
+
     <div class="row">
 
-
-
-        <div class="col-lg-9 profileLeftContainer">
-        <?= UserProfileOfferNeed::widget(['user' => $user]) ?>
-
-        <?= UserExperience::widget(['user' => $user, 'htmlOptions' => ['style' => 'margin-bottom:100px']]) ?>
-            <?=ProjectPortfolio::widget(['user' => $user]);?>
-            <?=MarketPlacePortfolio::widget(['user' => $user]);?>
-            <div class="userCoins tabletView">
-                <div class="coinsHeader">
-                    <h2><span>Coins</span><i class="far fa-question-circle"></i></h2>
-                    <a href="" class="accountDetail">Account Details</a>
-                </div>
-                <div class="coinsBody">
-
-                    <div class="coin">
-                        <img src="/themes/Coinsence/img/coinsenceToken.jpg" class="coinImage" alt="" />
-                        <span class="amountCoin">500</span>
-                    </div>
-                    <div class="coin">
-                        <img src="/themes/Coinsence/img/coinsenceToken.jpg" class="coinImage" alt="" />
-                        <span class="amountCoin">500</span>
-                    </div>
-                    <div class="coin">
-                        <img src="/themes/Coinsence/img/coinsenceToken.jpg" class="coinImage" alt="" />
-                        <span class="amountCoin">500</span>
-                    </div>
-                    <div class="coin">
-                        <img src="/themes/Coinsence/img/coinsenceToken.jpg" class="coinImage" alt="" />
-                        <span class="amountCoin">500</span>
-                    </div>
-                </div>
-            </div>
-            <?php
-                if (!Yii::$app->user->isGuest) {
-                    echo Form::widget(['contentContainer' => Yii::$app->user->getIdentity()]);
-                }
-                echo '<div class="recentPosts">
-                <h2>Recent posts</h2>';
-                echo StreamViewer::widget([
-                    'streamAction' => '//directory/directory/stream',
-                    'messageStreamEmpty' => (!Yii::$app->user->isGuest) ?
-                            Yii::t('DirectoryModule.base', '<b>Nobody wrote something yet.</b><br>Make the beginning and post something...') :
-                            Yii::t('DirectoryModule.base', '<b>There are no profile posts yet!</b>'),
-                    'messageStreamEmptyCss' => (!Yii::$app->user->isGuest) ?
-                            'placeholder-empty-stream' :
-                            '',
-                ]);
-                echo '</div>';
-            ?>
-            <?= MyRecentActivities::widget([
-               'widgets' => [
-                [
-                    ActivityStreamViewer::class,
-                    ['streamAction' => '/dashboard/dashboard/activity-stream'],
-                    ['sortOrder' => 150],
-                ]
-            ]
-            ]);
-            ?>
-            <?/*php 
-echo \humhub\widgets\LoaderWidget::widget();
-*/?>
-
-           
-           
-            
-
+        <div class="col-lg-<?= ($this->hasSidebar()) ? '9' : '12' ?> profileLeftContainer">
+           <?= $content ?>
         </div>
         <?php if ($this->hasSidebar()): ?>
         <div class="col-lg-3 layout-sidebar-container">

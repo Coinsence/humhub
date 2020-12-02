@@ -15,8 +15,6 @@ if ($allowModifyProfileBanner || $allowModifyProfileImage) {
 }
 
 ?>
-
-
 <div class="panel panel-default panel-profile">
 
     <div class="userInfo">
@@ -28,13 +26,11 @@ if ($allowModifyProfileBanner || $allowModifyProfileImage) {
                 src="<?= $user->getProfileBannerImage()->getUrl(); ?>" width="100%"
                 style="width: 100%; max-height: 226px;">
 
-            <!-- "/themes/Coinsence/img/cover.jpg" -->
             <!-- check if the current user is the profile owner and can change the images -->
             <?php if ($allowModifyProfileBanner) : ?>
-            <form class="fileupload" id="bannerfileupload" action="" method="POST" enctype="multipart/form-data"
-                style="position: absolute; top: 0; left: 0; opacity: 0; width: 100%; height: 100%;">
+            <form class="fileupload" id="bannerfileupload" action="" method="POST" enctype="multipart/form-data">
                 <input type="file" name="images[]" aria-hidden="true">
-                <div>
+                <div class="banner-upload-placeholder">
                     <i class="fa fa-camera"></i>
                     <h2>Add a cover image</h2>
                     <p>Optimal dimensions: 1220 x 226 </p>
@@ -61,7 +57,6 @@ if ($allowModifyProfileBanner || $allowModifyProfileImage) {
             </div>
 
             <?php endif; ?>
-
 
             <!-- check if the current user is the profile owner and can change the images -->
             <?php if ($allowModifyProfileBanner): ?>
@@ -98,13 +93,13 @@ if ($allowModifyProfileBanner || $allowModifyProfileImage) {
         </div>
         <div>
             <div class="topInfo row">
-                <div class="badges col-md-4">
+                <div class="badges col-sm-4">
                     <?php foreach ($user->getTags() as $tag): ?>
                     <span> <?php echo Html::a(Html::encode($tag)); ?></span>
                     <?php endforeach; ?>
 
                 </div>
-                <div class="profilePicture col-md-4">
+                <div class="profilePicture col-sm-4">
 
                     <?php if ($user->profileImage->hasImage()) : ?>
                     <a data-ui-gallery="profileHeader" href="<?= $user->profileImage->getUrl('_org'); ?>">
@@ -121,7 +116,7 @@ if ($allowModifyProfileBanner || $allowModifyProfileImage) {
                     <!-- check if the current user is the profile owner and can change the images -->
                     <?php if ($allowModifyProfileImage) : ?>
                     <form class="fileupload" id="profilefileupload" action="" method="POST"
-                        enctype="multipart/form-data" style="position: absolute; top: 0; left: 0; opacity: 0;">
+                        enctype="multipart/form-data">
                         <input type="file" aria-hidden="true" name="images[]">
                     </form>
 
