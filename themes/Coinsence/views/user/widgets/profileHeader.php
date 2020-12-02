@@ -191,13 +191,7 @@ if ($allowModifyProfileBanner || $allowModifyProfileImage) {
                         <i class="fa fa-linkedin"></i>
                     </a>
                     <?php endif;?>
-                    <?php if(($user->profile->url_instagram)==''):?>
-                   
-                   <?php else: ?>
-                   <a href="<?php echo $user->profile->url_instagram?>">
-                       <i class="fa fa-instagram"></i>
-                   </a>
-                   <?php endif;?>
+                    
                 </div>
                 <div class="contact mobileView">
 
