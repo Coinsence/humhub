@@ -9,6 +9,9 @@ use humhub\modules\user\widgets\UserSpaces;
 use humhub\modules\user\widgets\UserTags;
 use humhub\modules\user\widgets\UserWall;
 use humhub\modules\xcoin\widgets\UserCoin;
+use humhub\modules\like\widgets\LikeLink;
+use humhub\modules\user\widgets\UserListBox;
+use humhub\modules\xcoin\widgets\UserLike;
 
 ?>
 
@@ -26,7 +29,7 @@ ProfileSidebar::widget([
         [UserSpaces::class, ['user' => $user], ['sortOrder' => 20]],
         [FriendsPanel::class, ['user' => $user], ['sortOrder' => 30]],
         [UserFollower::class, ['user' => $user], ['sortOrder' => 40]],
-        [UserWall::class, ['user' => $user], ['sortOrder' => 40]],
+
     ]
 ]);
 ?>

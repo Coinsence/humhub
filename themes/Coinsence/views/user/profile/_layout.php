@@ -116,7 +116,7 @@ Select2BootstrapAsset::register($this);
                 [
                     ActivityStreamViewer::class,
                     ['streamAction' => '/dashboard/dashboard/activity-stream'],
-                    ['sortOrder' => 150]
+                    ['sortOrder' => 150],
                 ]
             ]
             ]);
