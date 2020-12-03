@@ -23,18 +23,11 @@ use humhub\modules\activity\widgets\ActivityStreamViewer;
 <?= UserCoin::widget(['user' => $user, 'cssClass' => 'tabletView']) ?>
 <?php if (!Yii::$app->user->isGuest) : ?>
     <?= Form::widget(['contentContainer' => Yii::$app->user->getIdentity()]) ?>
+    
 <?php endif; ?>
 <div class="recentPosts">
     <h2>Recent posts</h2>
-    <?= StreamViewer::widget([
-        'streamAction' => '//directory/directory/stream',
-        'messageStreamEmpty' => (!Yii::$app->user->isGuest) ?
-            Yii::t('DirectoryModule.base', '<b>Nobody wrote something yet.</b><br>Make the beginning and post something...') :
-            Yii::t('DirectoryModule.base', '<b>There are no profile posts yet!</b>'),
-        'messageStreamEmptyCss' => (!Yii::$app->user->isGuest) ?
-            'placeholder-empty-stream' :
-            '',
-    ]) ?>
+    <?= StreamViewer::widget(['contentContainer' => $user]); ?>
 </div>
 <?= MyRecentActivities::widget([
     'widgets' => [
