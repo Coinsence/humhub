@@ -22,8 +22,7 @@ use humhub\modules\activity\widgets\ActivityStreamViewer;
 <?= MarketPlacePortfolio::widget(['user' => $user]); ?>
 <?= UserCoin::widget(['user' => $user, 'cssClass' => 'tabletView']) ?>
 <?php if (!Yii::$app->user->isGuest) : ?>
-    <?= Form::widget(['contentContainer' => Yii::$app->user->getIdentity()]) ?>
-    
+    <?= Form::widget(['contentContainer' =>  $user]) ?> 
 <?php endif; ?>
 <div class="recentPosts">
     <h2>Recent posts</h2>
