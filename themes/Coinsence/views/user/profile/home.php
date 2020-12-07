@@ -17,10 +17,11 @@ use humhub\modules\activity\widgets\ActivityStreamViewer;
 ?>
 
 <?= UserProfileOfferNeed::widget(['user' => $user]) ?>
+<?= UserCoin::widget(['user' => $user, 'cssClass' => 'tabletView']) ?>
 <?= UserExperience::widget(['user' => $user, 'htmlOptions' => ['style' => 'margin-bottom:100px']]) ?>
 <?= ProjectPortfolio::widget(['user' => $user]); ?>
 <?= MarketPlacePortfolio::widget(['user' => $user]); ?>
-<?= UserCoin::widget(['user' => $user, 'cssClass' => 'tabletView']) ?>
+
 <?php if (!Yii::$app->user->isGuest) : ?>
     <?= Form::widget(['contentContainer' =>  $user]) ?> 
 <?php endif; ?>

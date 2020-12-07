@@ -248,14 +248,14 @@ if ($allowModifyProfileBanner || $allowModifyProfileImage) {
             
             <?php else: ?>
             <a href="<?php echo $user->profile->url_twitter?>">
-                <i class="fab fa-twitter-square"></i>
+                <i class="fa fa-twitter-square"></i>
             </a>
             <?php endif;?>
             <?php if(($user->profile->url_linkedin)==''):?>
             
             <?php else: ?>
             <a href="<?php echo $user->profile->url_linkedin?>">
-                <i class="fab fa-linkedin"></i>
+                <i class="fa fa-linkedin"></i>
             </a>
             <?php endif;?>
         </div>
