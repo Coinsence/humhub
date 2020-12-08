@@ -22,7 +22,7 @@
         "bower-asset/blueimp-file-upload": "9.24.*",
         "bower-asset/bootstrap-markdown": "2.10.*",
         "bower-asset/caret.js": "0.2.2",
-        "bower-asset/clipboard.js": "*",
+        "bower-asset/clipboard.js": "v2.8.1",
         "bower-asset/fontawesome": "^4.7.0",
         "bower-asset/html5shiv": "^3.7",
         "bower-asset/imagesloaded": "*",
