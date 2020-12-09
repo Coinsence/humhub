@@ -95,7 +95,9 @@ if ($allowModifyProfileBanner || $allowModifyProfileImage) {
             <div class="topInfo row">
                 <div class="badges col-sm-4">
                     <?php foreach ($user->getTags() as $tag): ?>
-                    <span> <?php echo Html::a(Html::encode($tag)); ?></span>
+                        <?php if (!empty($tag)) : ?>
+                            <span> <?php echo Html::a(Html::encode($tag)); ?></span>
+                        <?php endif; ?>
                     <?php endforeach; ?>
 
                 </div>
