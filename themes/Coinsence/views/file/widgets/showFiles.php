@@ -17,7 +17,6 @@ use yii\helpers\Html;
 <!-- hideOnEdit mandatory since 1.2 -->
 <div class="hideOnEdit">
     <!-- Show Images as Thumbnails -->
-
     <?php if($showPreview) :?>
     <?php $count=0 ?>
     <div class="post-files row" id="post-files-<?= $object->getUniqueId(); ?>">
