@@ -14,25 +14,11 @@ use humhub\modules\user\widgets\StreamViewer;
 use humhub\modules\xcoin\widgets\MyRecentActivities;
 use humhub\modules\activity\widgets\ActivityStreamViewer;
 use humhub\modules\tasks\widgets\MyTasks;
-use humhub\modules\tasks\widgets\TaskUserList;
+use humhub\modules\tasks\widgets\MyTasksUser;
 
 ?>
-
-<?= UserProfileOfferNeed::widget(['user' => $user]) ?>
-<?= UserCoin::widget(['user' => $user, 'cssClass' => 'tabletView']) ?>
-<!-- MyTasks::widget(['cssClass' => 'tabletView']) -->
-
-<?= UserExperience::widget(['user' => $user, 'htmlOptions' => ['style' => 'margin-bottom:100px']]) ?>
-<?= ProjectPortfolio::widget(['user' => $user]); ?>
-<?= MarketPlacePortfolio::widget(['user' => $user]); ?>
-
-<?php if (!Yii::$app->user->isGuest) : ?>
-    <?= Form::widget(['contentContainer' =>  $user]) ?> 
-<?php endif; ?>
-<div class="recentPosts">
-    <h2>Recent posts</h2>
-    <?= StreamViewer::widget(['contentContainer' => $user]); ?>
-</div>
+<?php
+/*ProjectPortfolio::widget(['user' => $user]); ?>
 <?= MyRecentActivities::widget([
     'widgets' => [
         [
@@ -42,7 +28,25 @@ use humhub\modules\tasks\widgets\TaskUserList;
         ]
     ]
 ]);
+**/
 ?>
+
+<?= UserProfileOfferNeed::widget(['user' => $user]) ?>
+<?= UserCoin::widget(['user' => $user, 'cssClass' => 'tabletView']) ?>
+
+<?= UserExperience::widget(['user' => $user, 'htmlOptions' => ['style' => 'margin-bottom:100px']]) ?>
+<?= MyTasksUser::widget(['user' => $user,'cssClass' => 'tabletViewTasks'])?>
+
+<?=  MarketPlacePortfolio::widget(['user' => $user]); ?>
+
+<?php if (!Yii::$app->user->isGuest) : ?>
+    <?= Form::widget(['contentContainer' =>  $user]) ?> 
+<?php endif; ?>
+<div class="recentPosts">
+    <h2>Recent posts</h2>
+    <?= StreamViewer::widget(['contentContainer' => $user]); ?>
+</div>
+
 <?//= \humhub\widgets\LoaderWidget::widget() ?>
 
 <?php $this->beginBlock('sidebar'); ?>
@@ -54,13 +58,13 @@ ProfileSidebar::widget([
         [UserSpaces::class, ['user' => $user], ['sortOrder' => 20]],
         [FriendsPanel::class, ['user' => $user], ['sortOrder' => 30]],
         [UserFollower::class, ['user' => $user], ['sortOrder' => 40]],
-        [MyTasks::class,[],['sortOrder'=>50]],
+        [MyTasksUser::class,['user' => $user],['sortOrder'=>50]],
 
         
 
     ]
 ]);
 ?>
-<?=MyTasks::widget(['contentContainer'=> $user]);?>
+
 
 <?php $this->endBlock(); ?>
