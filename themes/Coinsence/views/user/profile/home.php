@@ -13,11 +13,15 @@ use humhub\modules\post\widgets\Form;
 use humhub\modules\user\widgets\StreamViewer;
 use humhub\modules\xcoin\widgets\MyRecentActivities;
 use humhub\modules\activity\widgets\ActivityStreamViewer;
+use humhub\modules\tasks\widgets\MyTasks;
+use humhub\modules\tasks\widgets\TaskUserList;
 
 ?>
 
 <?= UserProfileOfferNeed::widget(['user' => $user]) ?>
 <?= UserCoin::widget(['user' => $user, 'cssClass' => 'tabletView']) ?>
+<!-- MyTasks::widget(['cssClass' => 'tabletView']) -->
+
 <?= UserExperience::widget(['user' => $user, 'htmlOptions' => ['style' => 'margin-bottom:100px']]) ?>
 <?= ProjectPortfolio::widget(['user' => $user]); ?>
 <?= MarketPlacePortfolio::widget(['user' => $user]); ?>
@@ -50,8 +54,13 @@ ProfileSidebar::widget([
         [UserSpaces::class, ['user' => $user], ['sortOrder' => 20]],
         [FriendsPanel::class, ['user' => $user], ['sortOrder' => 30]],
         [UserFollower::class, ['user' => $user], ['sortOrder' => 40]],
+        [MyTasks::class,[],['sortOrder'=>50]],
+
+        
 
     ]
 ]);
 ?>
+<?=MyTasks::widget(['contentContainer'=> $user]);?>
+
 <?php $this->endBlock(); ?>
