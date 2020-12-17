@@ -92,6 +92,60 @@ class TagController extends Controller
     }
 
     /**
+     * Shows default all (spaces / users) tag cover images
+     * @throws ForbiddenHttpException
+     */
+    public function actionIndexAll()
+    {
+        if (!Yii::$app->user->can(new ManageTags())) {
+            return $this->forbidden();
+        }
+
+        $data = Yii::$app->request->post();
+        if ( $data &&
+            (
+                isset($data['ast-cover']) ||
+                isset($data['aut-cover'])
+            )
+        ) {
+            if ($data['ast-cover']) {
+                Tag::deleteAll(['type' => Tag::TYPE_ALL_SPACES]);
+                $tag = new Tag();
+                $tag->scenario = Tag::SCENARIO_CREATE;
+                $tag->type = Tag::TYPE_ALL_SPACES;
+                $tag->save();
+                $tag->fileManager->attach($data['ast-cover']);
+
+                if ($tag->errors)
+                    var_dump($tag->errors);
+            }
+            if ($data['aut-cover']) {
+                Tag::deleteAll(['type' => Tag::TYPE_ALL_USERS]);
+                $tag = new Tag();
+                $tag->scenario = Tag::SCENARIO_CREATE;
+                $tag->type = Tag::TYPE_ALL_USERS;
+                $tag->save();
+                $tag->fileManager->attach($data['aut-cover']);
+
+                if ($tag->errors)
+                    var_dump($tag->errors);
+            }
+
+            $this->view->saved();
+            return $this->redirect([
+                '/admin/tag/index-all'
+            ]);
+
+        }
+
+        return $this->render('tags-all', [
+            'allSpacesTag' => Tag::findOne(['type' => Tag::TYPE_ALL_SPACES]),
+            'allUsersTag' => Tag::findOne(['type' => Tag::TYPE_ALL_USERS]),
+        ]);
+
+    }
+
+    /**
      * Create new tag
      * @throws ForbiddenHttpException
      */
