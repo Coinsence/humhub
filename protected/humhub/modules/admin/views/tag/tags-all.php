@@ -42,7 +42,6 @@ $aut_upload = Upload::create();
     ]) ?>
     <?= $ast_upload->preview([
         'options' => ['style' => 'margin-top:10px'],
-        'model' => $model,
         'showInStream' => true,
     ]) ?>
 
@@ -76,7 +75,6 @@ $aut_upload = Upload::create();
     ]) ?>
     <?= $aut_upload->preview([
         'options' => ['style' => 'margin-top:10px'],
-        'model' => $model,
         'showInStream' => true,
     ]) ?>
 
