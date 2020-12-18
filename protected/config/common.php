@@ -12,9 +12,10 @@ return [
             'enablePrettyUrl' => true,
             'rules' => [
                 'marketplace' => 'xcoin/marketplace-overview',
+                'home' => 'dashboard/dashboard',
             ],
         ],
     ],
     'defaultRoute' => 'xcoin/marketplace-overview',
-    'homeUrl' => '/',
+    'homeUrl' => 'home',
 ];
