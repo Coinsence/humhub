@@ -39,6 +39,13 @@ class TagMenu extends BaseMenu
             'isActive' => (Yii::$app->controller->module && Yii::$app->controller->module->id == 'admin' && Yii::$app->controller->id == 'tag' && Yii::$app->controller->action->id == 'index-space'),
             'isVisible' => Yii::$app->user->can(new ManageTags())
         ]);
+        $this->addItem([
+            'label' => Yii::t('AdminModule.views_tag_index', 'Tags - All'),
+            'url' => Url::toRoute(['/admin/tag/index-all']),
+            'sortOrder' => 200,
+            'isActive' => (Yii::$app->controller->module && Yii::$app->controller->module->id == 'admin' && Yii::$app->controller->id == 'tag' && Yii::$app->controller->action->id == 'index-all'),
+            'isVisible' => Yii::$app->user->can(new ManageTags())
+        ]);
 
         parent::init();
     }
