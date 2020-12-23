@@ -6,8 +6,7 @@ use yii\captcha\Captcha;
 use yii\helpers\Url;
 use yii\widgets\ActiveForm; ?>
 
-<a class="brand" href="/dashboard"><img class="white" src="<?= $this->theme->getBaseUrl(); ?>/img/slogan_white.png"></a>
-<a class="brand" href="/dashboard"><img class="black" src="<?= $this->theme->getBaseUrl(); ?>/img/slogan_black.png"></a>
+<a class="brand" href="/home"><img src="<?= $this->theme->getBaseUrl(); ?>/img/slogan.png"></a>
 
 <div class="content">
 

@@ -7,7 +7,7 @@ use humhub\compat\CActiveForm;
 $this->pageTitle = Yii::t('UserModule.views_auth_resetPassword', 'Password reset');
 ?>
 
-<a class="brand" href="/dashboard"><img src="http://coinsence.localhost/uploads/logo_image/logo.png?cacheId=0"></a>
+<a class="brand" href="/home"><img src="<?= $this->theme->getBaseUrl(); ?>/img/slogan.png"></a>
 
 <div class="content">
 
