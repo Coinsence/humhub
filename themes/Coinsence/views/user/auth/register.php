@@ -47,7 +47,10 @@ $this->pageTitle = Yii::t('UserModule.views_auth_register', 'Register');
         <?php ActiveForm::end(); ?>
 
         <div class="labels">
-            <h6>By clicking the button, you agree to our <a href="#">Terms of services</a> and have read and acknowledge our <a href="#">Privacy Policy</a></h6>
+            <h6>
+                By clicking the button, you agree to our <a href="https://menatabadol.org/terms-conditions/" target="_blank">Terms of services</a> and have read and acknowledge our <a href="https://menatabadol.org/privacy-policy/" target="_blank">Privacy Policy</a>.<br>
+                You can also <a href="https://menatabadol.org/contact/" target="_blank">contact</a> us.
+            </h6>
         </div>
 
     </div>
