@@ -9,7 +9,11 @@ use humhub\modules\friendship\models\Friendship;
 ?>
 <?php if ($friendshipState === Friendship::STATE_FRIENDS) : ?>
     <div class="btn-group">
-       
+    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: flex;
+align-items: center;">
+    <span class="glyphicon glyphicon-ok" style="color: #456ca8;margin-right: 7px;"></span> <?= Yii::t("FriendshipModule.base", "Friends"); ?>
+
+            </button>
         <ul class="dropdown-menu">
             <li><?= Html::a(Yii::t("FriendshipModule.base", "Unfriend"), Url::to(['/friendship/request/delete', 'userId' => $user->id]), ['data-method' => 'POST', 'data-ui-loader' => '']); ?></li>
         </ul>
@@ -30,10 +34,6 @@ use humhub\modules\friendship\models\Friendship;
         </ul>
     </div>
 <?php elseif ($friendshipState === Friendship::STATE_REQUEST_SENT) : ?>
-    <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: flex;
-align-items: center;">
-    <span class="glyphicon glyphicon-ok" style="color: #456ca8;margin-right: 7px;"></span> <?= Yii::t("FriendshipModule.base", "Friends"); ?>
-
-            </button>
+  
     <?= Html::a(Yii::t("FriendshipModule.base", "Cancel friend request"), Url::to(['/friendship/request/delete', 'userId' => $user->id]), ['class' => 'btn btn-default disconnect', 'data-method' => 'POST', 'data-ui-loader' => '']); ?>
 <?php endif; ?>
