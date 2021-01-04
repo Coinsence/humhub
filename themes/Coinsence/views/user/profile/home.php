@@ -34,7 +34,7 @@ use humhub\modules\tasks\widgets\MyTasksUser;
 <?= UserProfileOfferNeed::widget(['user' => $user]) ?>
 <?= UserCoin::widget(['user' => $user, 'cssClass' => 'tabletView']) ?>
 
-<?= UserExperience::widget(['user' => $user, 'htmlOptions' => ['style' => 'margin-bottom:100px']]) ?>
+<?= UserExperience::widget(['user' => $user, 'htmlOptions' => ['style' => '']]) ?>
 <?= MyTasksUser::widget(['user' => $user,'cssClass' => 'tabletViewTasks'])?>
 
 <?=  MarketPlacePortfolio::widget(['user' => $user]); ?>
