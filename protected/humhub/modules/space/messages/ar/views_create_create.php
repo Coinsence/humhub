@@ -1,8 +1,8 @@
 <?php
 return array (
-  '<strong>Create</strong> new space' => '',
-  'Advanced access settings' => '',
+  '<strong>Create</strong> new space' => 'إنشاء فضاء جديد',
+  'Advanced access settings' => 'إعدادات الوصول المتقدمة',
   'Next' => 'التالي',
-  'Space name' => '',
-  'space description' => '',
+  'Space name' => 'اسم الفضاء',
+  'space description' => 'وصف الفضاء',
 );
