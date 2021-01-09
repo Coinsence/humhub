@@ -17,7 +17,7 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
-    '<strong>New</strong> member request' => '',
-    '<strong>Space</strong> members' => '',
-    'Show all' => '',
+    '<strong>New</strong> member request' => 'طلب عضو جديد',
+    '<strong>Space</strong> members' => 'أعضاء الفضاء',
+    'Show all' => 'إظهار الكل',
 ];
