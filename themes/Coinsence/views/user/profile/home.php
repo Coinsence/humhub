@@ -43,7 +43,7 @@ use humhub\modules\tasks\widgets\MyTasksUser;
     <?= Form::widget(['contentContainer' =>  $user]) ?> 
 <?php endif; ?>
 <div class="recentPosts">
-    <h2>Recent posts</h2>
+    <h2><?= Yii::t('UserModule.views_profile_home', 'Recent posts'); ?></h2>
     <?= StreamViewer::widget(['contentContainer' => $user]); ?>
 </div>
 
