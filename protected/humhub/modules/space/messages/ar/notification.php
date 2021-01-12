@@ -17,6 +17,7 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
+    '{displayName} revoked your invitation for the space {spaceName}' => '',
     'You were added to Space {spaceName}' => '{spaceName} تمت إضافتك إلى الفضاء',
     '{displayName} accepted your invite for the space {spaceName}' => '{spaceName} قبل دعوتك للمساحة {displayName}',
     '{displayName} approved your membership for the space {spaceName}' => '{spaceName} وافق على عضويتك في المساحة {displayName}',

@@ -19,5 +19,6 @@
 return [
     '<strong>Manage</strong> Tags' => '',
     'Space Tags' => '',
+    'Tags - All' => '',
     'User Tags' => '',
 ];

@@ -17,12 +17,14 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
+    'Please enter the letters from the image.' => '',
+    '<strong>Sign</strong> up' => ' تسجيل',
     '<strong>Join</strong> the network' => ' الانضمام إلى الشبكة',
     '<strong>Please</strong> sign in' => 'الرجاء تسجيل الدخول',
-    '<strong>Sign</strong> up' => ' تسجيل',
     'Don\'t have an account? Join the network by entering your e-mail address.' => 'ليس لديك حساب؟ انضم إلى الشبكة عن طريق إدخال عنوان بريدك الإلكتروني',
     'Forgot your password?' => 'نسيت رقمك السري؟',
     'If you\'re already a member, please login with your username/email and password.' => 'إذا كنت عضوًا بالفعل ، يرجى تسجيل الدخول باستخدام اسم المستخدم / البريد الإلكتروني وكلمة السر',
+    'Login' => 'تسجيل الدخول',
     'Please login with your username/email and password.' => 'الرجاء تسجيل الدخول باستخدام اسم المستخدم / البريد الإلكتروني وكلمة السر',
     'Register' => 'تسجيل',
     'Remember me' => 'تذكرني',
@@ -30,5 +32,4 @@ return [
     'email' => 'البريد الإلكتروني',
     'password' => 'كلمة السر',
     'username or email' => 'اسم المستخدم أو البريد الإلكتروني',
-    'Login' => 'تسجيل الدخول',
 ];
