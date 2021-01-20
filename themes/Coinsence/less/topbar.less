@@ -105,6 +105,7 @@
       border-radius: 2px;
       text-decoration: none;
       text-align: left;
+      color: @topbar-color-link-base;
     }
     .btn-group > .label {
       padding: 2px 4px 2px;
@@ -192,6 +193,7 @@
         border-radius: 2px;
         text-decoration: none;
         text-align: left;
+        color: @topbar-color-link-base;
 
         .no-space {
           margin: 7px auto;
@@ -205,13 +207,17 @@
     font-size: 16px;
     padding: 4px 10px;
     margin: 17px 2px;
+
+    & > a {
+      color: @topbar-color-link-base;
+    }
   }
   .search-xs {
     margin: 22px 0;
   }
   .topbar-coins {
     .amount {
-      color: black;
+      color: @topbar-color-link-base;
       margin: 18px 10px;
       display: inline-block;
       box-shadow: #303030 0px 0px 3px 0px;
@@ -229,11 +235,8 @@
   .dropdown-footer {
     margin: 10px 10px 5px;
   }
-  a {
-    color: @topbar-color-link-base;
-  }
   .caret {
-    border-top-color: @text-color-soft;
+    border-top-color: @topbar-color-link-base;
   }
   .btn-group > a {
     //background-color: lighten(@primary, 5%);
