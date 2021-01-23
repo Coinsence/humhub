@@ -10,7 +10,8 @@ $this->pageTitle = Yii::t('UserModule.views_auth_register', 'Register');
 ?>
 
 
-<a class="brand" href="/home"><img src="<?= $this->theme->getBaseUrl(); ?>/img/slogan.png"></a>
+<a class="brand centered" href="/home"><img class="white" src="<?= $this->theme->getBaseUrl(); ?>/img/slogan_white.png"></a>
+<a class="brand centered" href="/home"><img class="black" src="<?= $this->theme->getBaseUrl(); ?>/img/slogan_colored.png"></a>
 
 <div class="content">
 
