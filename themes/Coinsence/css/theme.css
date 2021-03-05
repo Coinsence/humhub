@@ -3068,14 +3068,20 @@ input[type=select] {
   margin: 36px 0 0 32px;
 }
 .login-container .brand img {
-  height: 82px;
+  height: 52px;
+}
+.login-container .brand img.black {
+  display: none;
 }
 @media only screen and (max-width: 1365px) {
-  .login-container .brand img {
-    height: 68px;
-  }
   .login-container .brand .bg {
     display: none;
+  }
+  .login-container .brand img.white {
+    display: none;
+  }
+  .login-container .brand img.black {
+    display: block;
   }
 }
 .login-container .content {
@@ -3086,9 +3092,12 @@ input[type=select] {
   /* Global rules */
 }
 .login-container .content .bg {
-  background-color: #65CBC9;
   height: 100%;
+  background-image: url("/themes/Coinsence/img/bg.png");
+  background-repeat: no-repeat;
   width: 701px;
+  background-size: cover;
+  background-position: 50% 50%;
 }
 .login-container .content .login-content,
 .login-container .content .register-content {
@@ -3214,23 +3223,23 @@ input[type=select] {
   font-size: 16px;
 }
 .login-container .content a {
-  color: #456CA8;
+  color: #28aa69;
 }
 .login-container .content a:focus,
 .login-container .content a:active,
 .login-container .content a:hover {
-  color: #365584;
+  color: #1e8150;
 }
 .login-container .content .btn {
   font-weight: bold;
   color: white;
-  background-color: #456CA8;
+  background-color: #28aa69;
 }
 .login-container .content .btn:focus,
 .login-container .content .btn:active,
 .login-container .content .btn:hover {
   color: white;
-  background-color: #365584;
+  background-color: #1e8150;
 }
 .login-container .content form {
   max-width: 694px;
@@ -3248,7 +3257,7 @@ input[type=select] {
   color: #1e1e1e;
 }
 .login-container .content .form-group input.form-control:focus {
-  border: 1px solid #7494c6;
+  border: 1px solid #4ad48f;
 }
 .login-container .content .form-group .regular-checkbox + .regular-checkbox-box {
   padding: 11px;
@@ -3257,8 +3266,8 @@ input[type=select] {
   cursor: pointer;
 }
 .login-container .content .form-group .regular-checkbox:checked + .regular-checkbox-box {
-  border: 1px solid #456CA8;
-  background: #456CA8;
+  border: 1px solid #28aa69;
+  background: #28aa69;
 }
 .login-container .content .form-group .regular-checkbox:checked + .regular-checkbox-box:after {
   top: 0;
@@ -3374,7 +3383,7 @@ input[type=select] {
     margin: 14px 0 0 14px;
   }
   .login-container .brand img {
-    height: 62px;
+    height: 38px;
   }
 }
 @media only screen and (max-height: 540px) {

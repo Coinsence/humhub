@@ -10,7 +10,9 @@ $this->pageTitle = Yii::t('UserModule.views_auth_login', 'Login');
 ?>
 
 
-<a class="brand" href="/home"><img src="<?= $this->theme->getBaseUrl(); ?>/img/slogan.png"></a>
+
+<a class="brand" href="/dashboard"><img class="white" src="<?= $this->theme->getBaseUrl(); ?>/img/slogan_white.png"></a>
+<a class="brand" href="/dashboard"><img class="black" src="<?= $this->theme->getBaseUrl(); ?>/img/slogan_black.png"></a>
 
 <div class="content">
 
