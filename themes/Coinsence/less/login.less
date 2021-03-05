@@ -26,22 +26,13 @@
       height: 82px;
     }
 
-    img.black {
-      display: none;
-    }
-
     @media only screen and (max-width: 1365px) {
 
       img {
         height: 68px;
       }
-
-      img.white {
+      .bg {
         display: none;
-      }
-
-      img.black {
-        display: block;
       }
 
     }
@@ -60,19 +51,8 @@
 
       background-color: #65CBC9;
       height: 100%;
-      background-image: url("/themes/Coinsence/img/bg.jpeg");
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: 50% 50%;
       width: 701px;
 
-    }
-    .bg:after {
-      content: '';
-      display: block;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.5);
     }
 
     .login-content,
@@ -476,21 +456,6 @@
 
     }
 
-  }
-
-  @media only screen and (min-width: 1366px) {
-    .brand.centered {
-      top: 50%;
-      left: calc(498px / 2);
-      transform: translate(-50%, -100%);
-      margin: 0;
-    }
-  }
-
-  @media only screen and (min-width: 1920px) {
-    .brand.centered {
-      left: calc(701px / 2);
-    }
   }
 
   @media only screen and (max-width: 575px) {
